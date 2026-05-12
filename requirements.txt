@@ -1,0 +1,13 @@
+# Runtime dependencies for the PiCar-X robot.
+# These are pre-installed on the SunFounder Raspberry Pi OS image,
+# but listed here for reference / fresh installs.
+#
+# Install on the Pi with:
+#   sudo apt install -y python3-picarx python3-vilib python3-robot-hat
+# or, if using pip in a virtualenv on the Pi:
+#   pip install picarx vilib robot-hat readchar
+
+picarx
+vilib
+robot-hat
+readchar
