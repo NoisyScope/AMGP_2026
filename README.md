@@ -1,4 +1,13 @@
-# PiCar-X Robot Template
+# AMGP 2026 — Autonomous Lane-Keeping Robot on PiCar-X
+
+![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-PiCar--X%20v2-A22846?logo=raspberrypi&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+A modular control stack and competition solution for an autonomous small-scale car. The car keeps
+to a lane bounded by white lines using **camera-based lane-centre estimation with a PID steering
+controller**, uses grayscale edge sensors as a safety layer, and passes obstacles detected by
+ultrasound on the side with more free space (see [`competition_example/`](competition_example/)).
 
 A small, modular Python codebase for the [SunFounder PiCar-X v2.0](https://docs.sunfounder.com/projects/picar-x-v20/en/latest/).
 Wraps SunFounder's `picarx` and `vilib` libraries behind clean, easy-to-extend modules.
@@ -6,7 +15,7 @@ Wraps SunFounder's `picarx` and `vilib` libraries behind clean, easy-to-extend m
 ## Project layout
 
 ```
-ClubDR/
+AMGP_2026/
 ├── README.md
 ├── requirements.txt
 ├── picarx_robot/            # The library — import this from your code
@@ -16,6 +25,8 @@ ClubDR/
 │   ├── camera.py            # pan / tilt / start stream / take photo
 │   ├── sensors.py           # ultrasonic + grayscale line sensors
 │   └── config.py            # speed and angle limits in one place
+├── calibration/             # Servo zeroing and grayscale-sensor calibration
+├── competition_example/     # Lane keeping: vision + PID + obstacle avoidance
 └── examples/                # Runnable demo scripts
     ├── basic_drive.py
     ├── take_photo.py
@@ -36,7 +47,7 @@ image flashed):
 sudo apt update && sudo apt install -y python3-picarx python3-vilib
 
 # 2. Run a demo from the project root.
-cd ~/ClubDR
+cd ~/AMGP_2026
 python3 examples/basic_drive.py
 ```
 
